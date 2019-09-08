@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Funciones</title>
+</head>
+<body>
+
+<form action="">
+	
+	<input type="text" id="numero1">
+	<input type="text" id="numero2">
+	<input type="button" value="Sumar" onclick="alert(suma());">
+
+</form>
+
+<script >
+	
+	var suma= function(num1,num2){
+		var num1 = parseInt(document.getElementById("numero1").value);
+		var num2 = parseInt(document.getElementById("numero2").value);
+		var resultado = num1 + num2;
+		return resultado;
+	}
+	///// .value nos sirve para obtener el valor de la caja de texto .
+
+</script>
+
+
+</body>
+</html>

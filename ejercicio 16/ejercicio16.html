@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="iso-8859-1" />
+<title>Ejercicio 16 - Información sobre eventos</title>
+
+<style type="text/css">
+body {font-family: arial, helvetica;}
+#info {width:160px; border:thin solid silver; padding:.5em; position:fixed;}
+#info h1 {margin: 0;}
+</style>
+
+<script type="text/javascript">
+function informacion(elEvento) {
+	var evento = elEvento || window.event;
+	var mitadHoritzontal = (tamanoVentanaNavegador()[0]/ 2);
+	var mitadVertical = (tamanoVentanaNavegador()[1]/ 2);
+	console.log(mitadHoritzontal)
+	e = []
+
+	if (mitadHoritzontal < evento.clientX ){
+		if(mitadVertical > event.clientY){
+			
+			e.push("RATÓN", "Derecho Arriba");
+		}else{
+			e.push("RATÓN", "Derecha Abajo");			
+		}
+	}else {
+		if(mitadVertical < event.clientY){
+			
+			e.push("RATÓN", "Izquierda Arriba");
+		}else{
+			e.push("RATÓN", "Izquierda Abajo");			
+		}
+	}
+	
+	muestraInformacion(e);
+}
+
+function muestraInformacion(mensaje) {
+	document.getElementById("info").innerHTML = '<h1>'+mensaje[0]+'</h1>';
+	for(var i=1; i<mensaje.length; i++) {
+		document.getElementById("info").innerHTML += '<p>'+mensaje[i]+'</p>';
+	}
+}
+
+function tamanoVentanaNavegador(){
+	// Adaptada de http://www.howtocreate.co.uk/tutorials/javascript/browserwindow
+	var dimensiones = [];
+	
+	if(typeof(window.innerWidth) == 'number') {
+		// No es IE
+		dimensiones = [window.innerWidth, window.innerHeight];
+	} else if(document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+		//IE 6 en modo estandar (no quirks)
+		dimensiones = [document.documentElement.clientWidth, document.documentElement.clientHeight];
+	} else if(document.body && (document.body.clientWidth || document.body.clientHeight)) {
+		//IE en modo quirks
+		dimensiones = [document.body.clientWidth, document.body.clientHeight];
+	}
+	
+	return dimensiones;
+}
+
+//alert(tamanoVentanaNavegador());
+
+document.onclick = informacion;
+
+</script>
+</head>
+
+<body>
+
+<div id="info"></div>
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+</body>
+</html>

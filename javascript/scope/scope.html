@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Scope Javascript</title>
+</head>
+<body>
+
+
+
+	<script>
+	//scope determina la accesibilidad de nuestro codigo
+
+	//global ---> variablesque podemos acceder a ellas desde cualquier parte del codigo>
+	//Local ---> variables creadas dentro una funcion, solo pueden ser accedidas desde su propia funcion o una funcion anidada.  si no se pone la palabra reservada var para una variable dentro de una funcion la variable queda global
+	
+		var variableGobal = ("esta es Global")
+
+		var miFuncion = function(){
+			var variableLocal = " hey esta es local";
+			 alert(variableLocal); //---> si hay una variable de una funcion hija que quieres acceder desde la funcion padre no podras acceder.
+
+			var FuncionLocal = function(){
+				var variableLocal = "esta es variable, local, dentro de funcionlocal";
+				alert(variableLocal); //---> en este caso hay dos variables escritas iguales, mostrara la variable dentro de la funcionLocal  si no hubiera dentro de esta funcion buscara en la funcion padre.
+
+			}
+
+			FuncionLocal();
+		}
+
+		miFuncion();
+
+
+ // para proteger el codigo de programa de terceros que quieran acceder a  variables internas desde afuera habra que poner lo siguiente...
+
+ //	(function(){ ---> funcion autoinvocada !
+ 		///Codigooo .........
+ 		//...  asi
+
+// 				var variableGobal = ("esta es Global")
+
+//		var miFuncion = function(){
+//			var variableLocal = " hey esta es local";
+//			 alert(variableLocal); 
+//
+//			var FuncionLocal = function(){
+//				var variableLocal = "esta es variable local, dentro de funcionlocal";
+//				alert(variableLocal); 
+
+//			}
+
+//			FuncionLocal();
+//		}
+
+//		miFuncion();
+// 	}())
+
+	</script>
+
+
+
+</body>
+</html>

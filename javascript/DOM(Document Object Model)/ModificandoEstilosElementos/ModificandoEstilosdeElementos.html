@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Modificando Estilos De los Elementos</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1 id="encabezado" class=""> titulo \^.^/</h1>
+
+	<script>
+	var encabezado = document.getElementById("encabezado");
+
+	// Modificando los estilos mediantes con Style
+	encabezado.style.color = "#11ff11"
+
+	// modificandolo mediandte con class
+	encabezado.className = "titulo tituloGrande";
+
+	//encabezado.className = encabezado.className.replace("parametro a bucar y reemplazar", "parametro nuevo");
+	encabezado.className = encabezado.className.replace("titulo", "");
+	</script>
+</body>
+</html>

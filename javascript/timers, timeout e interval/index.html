@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>timers, timeout and interval</title>
+	<link rel="stylesheet" type="text/css" href="css/.style.css">
+</head>
+<body>
+
+
+
+</body>
+
+<script>
+	(function(){
+		
+		var contador = 0;
+
+		/*var saludo = function(){
+			console.log("saludo")
+			contador ++;
+
+			// condicion para cerrar el intervalo
+			/*if(contador == 5 ){
+				clearInterval(intervalo); //---> aqui es para cerrar el intervalo
+			};*/
+
+
+		//};
+		// timeout
+		//setTimeout(funcion, delay--->tiempo)
+
+		//setTimeout(saludo, 5000);
+		
+		// interval
+		//setInterval(funcion, delay)
+		//setInterval(saludo, 1000);
+		/*var intervalo = setInterval(saludo, 1000)*/
+
+		// metodo para hacer un bluque infinito.. en tipo setInterval
+
+		var saludo2 = function(){
+
+			console.log("saludo 2 !");
+			contador++;
+
+			setTimeout(saludo2, 1000);
+		};
+
+		saludo2();
+
+	}());
+
+
+</script>
+</html>

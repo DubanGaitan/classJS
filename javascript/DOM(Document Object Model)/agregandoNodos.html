@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta Charset="UTF-8">
+	<title>Creando Nodos</title>
+</head>
+<body>
+<ol id= "lista">
+	<li> lorem ipsun dolor sit amet	</li>
+	<li>Asperiores ad, quam. Fuga.</li>
+</ol>
+
+<script>
+ //pasos Esenciales 
+ 	//1. crear el elemento
+ 	var elemento = document.createElement("li");
+
+ 	//2. crear  un nodo de texto
+ 	contenido = document.createTextNode("nuevo texto");
+
+ 	//3.añadir el nodo de texto al elemento 
+ 	elemento.appendChild(contenido);
+
+ 	//4. agregar atributos al elemento si se desea 
+ 	elemento.setAttribute("align", "center");
+
+ 	//5. agregar el elemento al documento
+	 	padre = document.getElementsByTagName("li")[0].parentNode;//-- parentNode -- nos devuelve el elemnto padre, se utiliza cuando no se conoce el elemento padre
+
+		//var padre = document.getElementById("lista");
+		//padre.appendChild(elemento);
+
+		var  elementohijo = document.getElementsByTagName("li")[0];
+		padre.insertBefore(elemento,elementohijo);//-- insertBefore ---> toma un elemento y lo pone hasta el inicio dentro del padre
+
+</script>
+
+</body>
+</html>

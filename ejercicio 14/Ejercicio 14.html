@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio 14 - DOM básico y atributos XHTML</title>
+
+<style type="text/css">
+	.oculto{display: none;}
+	.visible{display: inherit;}
+</style>
+
+<script type="text/javascript">
+	function muestraOculta() {
+		console.log('10')
+		if (this.previousSibling.previousSibling.className == null ){
+			this.previousSibling.previousSibling.className = 'oculto';
+			this.innerHTML = "Ocultar contenido"
+			console.log('12')
+		}else{ if (this.previousSibling.previousSibling.className == 'oculto'){
+			this.previousSibling.previousSibling.className = 'visible';
+			this.innerHTML = "Ocultar contenido"
+			console.log('13')
+
+			}else{
+			this.previousSibling.previousSibling.className = 'oculto';
+			this.innerHTML = "Mostrar contenido"
+			console.log('14')
+			}
+
+		}
+
+	}
+	aElement = document.getElementsByTagName('a');
+	window.onload = function(){
+		
+		for (i = 0; i < aElement.length; i++){
+		//console.log('Qq')
+			//document.getElementById('contenidos_1').onclick = muestraOculta;
+			aElement[i].onclick = muestraOculta;
+			console.log(aElement[i])
+		}
+	}
+
+</script>
+</head>
+
+<body>
+<p id="contenidos_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.</p>
+<a id="enlace_1" href="#" >Ocultar contenidos</a>
+
+<br>
+
+<p id="contenidos_2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.</p>
+<a id="enlace_2" href="#">Ocultar contenidos</a>
+
+<br>
+
+<p id="contenidos_3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices porttitor, pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis, faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu, at posuere ante quam non dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis scelerisque.</p>
+<a id="enlace_3" href="#">Ocultar contenidos</a>
+
+
+
+</body></html>

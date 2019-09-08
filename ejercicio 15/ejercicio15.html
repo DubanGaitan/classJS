@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="iso-8859-1" />
+		<title>Ejercicio 15 - Información sobre eventos</title>
+
+		<style type="text/css">
+			body {font-family: arial, helvetica;}
+			#info {width:160px; border:thin solid silver; padding:.5em; position:fixed;}
+			#info h1 {margin: 0;}
+		</style>
+
+		<script type="text/javascript">
+
+			window.onload = function(){
+
+				function muestraInformacion(mensaje) {
+					document.getElementById("info").innerHTML = '<h1>'+mensaje[0]+'</h1>';
+					for(var i=1; i<mensaje.length; i++) {
+						document.getElementById("info").innerHTML += '<p>'+mensaje[i]+'</p>';
+					}
+				}
+
+				// Detectar si el navegador es Internet Explorer
+
+				function ver (elemento) {
+					var ele = elemento || window.event;
+
+					switch(ele.type){
+
+						case 'mousemove':
+							var posiX = ele.screenX, posiY = ele.screenY,
+							ventX = ele.clientX, ventY = ele.clientY; 
+							document.getElementById("info").style.backgroundColor = '#FFFFFF';
+							muestraInformacion(['Raton Movi', 'Pantalla [ '+posiX+','+posiY+' ]', 'Ventana [ '+ventX+ ','+ventY+' ]'])
+						break;
+
+						case 'click':
+							var posiX = ele.clientX, posiY = ele.clientY;		
+							document.getElementById("info").style.backgroundColor = '#FFFFCC';
+							muestraInformacion(['Raton', 'Pantalla [ '+posiX+','+posiY+' ]'])
+
+						break;
+
+						case 'keypress':
+							var code = ele.keyCode,
+								char = String.fromCharCode(ele.charCode);
+							document.getElementById("info").style.backgroundColor = '#CCE6FF';
+							muestraInformacion(['Teclado', 'Codigo ['+code+' ]', 'Caracter ['+char+' ]']);														
+						break;
+
+
+					}
+
+
+					//var cordenaX = ele.clientX;
+					//var cordenaY = ele.clientY;
+
+					//muestraInformacion(['Raton', 'Pagina['+cordenaX+','+cordenaY+']'])
+
+					//alert('Ha espulsado el  '+ ele.type + ", " + cordenaX + ", y cordenada" + cordenaY)
+				}
+
+				document.onclick = ver;
+				document.onkeypress = ver;
+				document.onmousemove = ver;
+			}
+		</script>
+	</head>
+
+<body>
+	<div id="info"></div>
+
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+</body>
+</html>

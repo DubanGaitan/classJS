@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Acceso a los Atributos delos DOM</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<section id="contenedor">
+		<div class=""> </div>
+		<div class=""> </div>
+	</section>
+
+	<script>
+		var elemento = document.createElement("div"),
+			padre = document.getElementById("contenedor");
+		var reference = document.getElementsByTagName("div")[0];
+		elemento.setAttribute("class", "rojo"); //--> cambiar clase o asi ;
+		//elemento.className = "nuevaClase";
+
+
+		padre.insertBefore(elemento, reference); //--> agregarlo antes de la referencia que le dimos
+
+		//document.body.appendChild(elemento); //---> esto es para agregarlo alfinal del body.
+
+		//Para cambiar de Id;
+		//elemento.setAttribute("id","NuevaId");
+		// o asi; 
+		//elemento.id = "nuevoId";
+		
+		// dos o mas 
+		// elemento.setAttribute("class", "clase1 clase2");
+	</script>
+</body>
+</html>

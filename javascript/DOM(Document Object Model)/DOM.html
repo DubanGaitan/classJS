@@ -1,0 +1,52 @@
+<! camel Sintax (CamelSintax)- quiere decirque nos la sintasis se escribe la primera palabra en minuscula, y la siguiente con la inicial en mayuscula asi: dubanAndresGaitanVargas.>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>DOM</title>
+</head>
+<body>
+
+	<p>
+		/DOM <Document Object Model) --> permite acceder y poder manipular elemntos den nuestro documento .....
+	</p>
+    
+    <p>
+    	'Modelo de Objetos del Documento' o 'Modelo en Objetos para la Representación de Documentos') es esencialmente una interfaz de plataforma que proporciona un conjunto estándar de objetos para representar documentos HTML, XHTML y XML,1 un modelo estándar sobre cómo pueden combinarse dichos objetos, y una interfaz estándar para acceder a ellos y manipularlos. A través del DOM, los programas pueden acceder y modificar el contenido, estructura y estilo de los documentos HTML y XML, que es para lo que se diseñó principalmente.
+
+    </p>
+    <div id="este">
+    	
+    </div>
+    <p>
+    	hola paspi
+    </p>
+    <script>
+    		//DOM <<Document Object Model) --> permite acceder y poder manipular elemntos den nuestro documento .....
+			//'Modelo de Objetos del Documento' o 'Modelo en Objetos para la Representación de Documentos') es esencialmente una interfaz de plataforma que proporciona un conjunto estándar de objetos para representar documentos HTML, XHTML y XML,1 un modelo estándar sobre cómo pueden combinarse dichos objetos, y una interfaz estándar para acceder a ellos y manipularlos. A través del DOM, los programas pueden acceder y modificar el contenido, estructura y estilo de los documentos HTML y XML, que es para lo que se diseñó principalmente.
+
+	//----------------- Creando Nodos ---------------//	
+		var elementos = document.getElementsByTagName("p");
+
+
+			 //para ingresar al contenido es .innerHTML
+			 //hacer en consola del navegador
+
+			 //elementos[posicion].innerHTML = "valor a cambiar";
+			 //Ejemeplo 
+			 //elementos[0].innerHTML = "ESte Es Mi Nuevo Valor"
+
+		//1.- Crear el elemnto
+		var elemento = document.createElement("h2");
+		//2.-Crear un nodo de texto
+		var contenido = document.createTextNode("aqui va nuestro contenido");
+		//3.-Añandir el nodo de texto al elemento
+		elemento.appendChild(contenido);
+		//4.- Agregar atributos al elemento
+		elemento.setAttribute("align", "center");
+		//5.- Agregar el elemento al documento
+		document.getElementById("este").appendChild(elemento);
+    </script>
+</body>
+</html>

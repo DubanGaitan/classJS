@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Modificando, Reemplazando y Eliminando nodos</title>
+</head>
+<body>
+	<ol id= "lista">
+		<li id= "primero"> lorem ipsun dolor sit amet	</li>
+
+		<li id= "segundo">Asperiores ad, quam. Fuga.</li>
+
+		<li id= "tercero"> lorem ipsun dolor sit amet	</li>
+
+		<li id= "cuarto">Asperiores ad, quam. Fuga.</li>
+
+	</ol>
+	<script>
+
+	//modificar nodo
+		//var primerElemento = document.getElementById("primero");
+		//var segundoElemento = document.getElementById("segundo");
+		//primerElemento.innerHTML = "nuevo Texto <b> Negrita </b>"; //--> accede al codigo html y modifica tomando encuenta etiquetas que hayan en la modificacion
+
+		//segundoElemento.textContent = "nuevo Texto <b> Negrita </b>";//-- modifica tal igual el texto si encuentra etiquetas las tomas como siples string
+
+ // reemplazar nodo
+  
+	var elemento = document.createElement("li"),
+		contenido = document.createTextNode("nuevo Texto");
+		elemento.appendChild(contenido);
+
+
+	var padre = document.getElementsByTagName("li")[0].parentNode;
+	var referencia =  document.getElementsByTagName("li")[0];
+	padre.replaceChild(elemento, referencia);
+
+
+//////////Eliminar Nodo//////////////////
+////////////////////////////////////7/////
+//////////////////////////////////////////
+
+	var elementoEliminar =document.getElementsByTagName("li")[1];//-- hago referencia al elemento que deseo eliminar
+
+	padre.removeChild(elementoEliminar); //---> tome el padre y elimine el hijo
+
+	</script>
+</body>
+</html>
